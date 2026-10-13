@@ -1,0 +1,24 @@
+{
+  "owner": "BensonLaur",
+  "name": "BesTools",
+  "visibility": "public",
+  "description": "BesTools · 个人顺手工具集。把常用的小事，做得顺手一点。安全随机密码生成，在浏览器本地运行，免费、无广告。",
+  "homepage": "https://bensonlaur.github.io/BesTools/",
+  "topics": ["bestools", "browser-tools", "password-generator", "privacy", "github-pages"],
+  "toolsCommit": {
+    "title": "feat: create BesTools with secure password generator",
+    "body": [
+      "提供个人工具箱首页与可直接收藏的随机密码工具，支持批量生成、字符规则和复制。",
+      "使用安全随机源与拒绝采样，保证所选类别覆盖；仅保存偏好，密码限定在当前页面。",
+      "通过随机逻辑与浏览器验证，覆盖子路径、窄屏、存储限制及无安全随机源；准备 Pages 和手动发布流程。"
+    ]
+  },
+  "portfolioCommit": {
+    "title": "feat: introduce BesTools in software portfolio",
+    "body": [
+      "将个人顺手工具集加入作品展示，提供工具箱与密码生成器的直接入口。",
+      "沿用现有暖白绿色设计并同步作品介绍，保留原有体验和打赏行为。",
+      "浏览器验证覆盖新入口、原有四个体验、子路径、窄屏和可逆动画。"
+    ]
+  }
+}

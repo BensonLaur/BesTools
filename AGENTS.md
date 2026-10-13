@@ -1,0 +1,25 @@
+# BesTools 工作约定
+
+## 项目定位
+
+- Bes 系列的个人顺手工具集，第一项工具是随机密码生成器。独立部署到 GitHub Pages，BesSoftware 负责介绍与链接。
+- 保留暖白、绿色、系统字体与简洁工具界面；工具入口有固定地址，可直接收藏和刷新。
+- 密码及工具输入在当前浏览器处理，不上传、不写入网址、不自动复制。仅明确列出的非敏感偏好允许持久化。
+- 随机密码必须使用 Web Crypto 安全随机源和拒绝采样；缺少安全随机源时明确停止，禁止降级到 Math.random。
+- 所需运行资源随项目保存。新增工具按真实需要推进，不展示尚未实现的工具卡片。
+
+## 修改与验证
+
+- UTF-8、纯 CRLF。每批修改仅检查触及文件，不规范化无关文件。
+- 简短中文注释解释随机分布、边界条件与生命周期，避免复述代码。
+- `npm run dev` 本地预览，`npm run build` 生成纯静态 `dist/`，`npm test` 检查随机逻辑、浏览器交互、子路径与窄屏。
+- `.local/`、`node_modules/`、`dist/`、`test-results/` 不提交、不发布。
+
+## Git 与发布
+
+- 当前准备阶段只创建和修改本地文件。用户下班后手动运行发布脚本，提交、远程创建、推送与部署才发生。
+- 使用实际执行时刻提交，不设置或改写 Git author/committer 时间。
+- 提交前阅读本文件与近期 `git log`，使用 Conventional Commits 标题，正文 2–4 条要点。
+- 提交前运行 `powershell -NoProfile -File C:\Users\Benso\.codex\scripts\get-current-model.ps1`；独立终端使用本次来源会话的 `-ThreadId`。只采用唯一标准输出，失败时停止，不猜测模型。
+- 末尾署名 `Co-Authored-By: Codex <model-slug> <noreply@openai.com>`。
+- 发布脚本先核对准备时的文件摘要，拒绝混入之后的无关改动；首次创建公开仓库需保留明确的仓库描述与 Website 地址。

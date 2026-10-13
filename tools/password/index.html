@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="免费、无广告的随机密码生成器。安全随机、可选字符、排除易混淆字符与批量复制，密码仅在当前浏览器生成。">
+  <meta name="theme-color" content="#f7f7f0" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#20251f" media="(prefers-color-scheme: dark)">
+  <title>随机密码生成器 · BesTools</title>
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../assets/styles.css">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到密码生成器</a>
+  <div class="page-shell">
+    <header class="site-header"><a class="wordmark" href="../../" aria-label="BesTools 首页">Bes<span>Tools</span><i aria-hidden="true">.</i></a><nav aria-label="主导航"><a href="../../">所有工具</a><a href="https://bensonlaur.github.io/BesSoftware/" target="_blank" rel="noopener noreferrer">Bes 软件 <span aria-hidden="true">↗</span></a></nav></header>
+    <main id="main">
+      <div class="breadcrumb"><a href="../../">工具箱</a><span aria-hidden="true">/</span><span>随机密码</span></div>
+      <div class="tool-heading"><div><p class="eyebrow"><span class="seed" aria-hidden="true"></span> 给日常一点省心</p><h1>随机密码生成器</h1><p class="intro">选好规则，让下一串密码交给随机。</p></div><span class="local-badge"><span aria-hidden="true">◉</span> 仅在本机生成</span></div>
+      <div class="generator-layout">
+        <form id="password-form" class="settings-panel" aria-label="密码生成设置" novalidate>
+          <div class="panel-heading"><h2>生成设置</h2><span>按你的习惯来</span></div>
+          <div class="setting-block"><div class="label-row"><label for="length">密码长度</label><div class="length-number"><input id="length" name="length" type="number" min="4" max="128" step="1" value="16" inputmode="numeric" aria-describedby="length-help"><span>位</span></div></div><input id="length-range" type="range" min="4" max="128" step="1" value="16" aria-label="拖动调整密码长度"><div class="range-labels"><span>4</span><span id="length-help">4–128 位</span><span>128</span></div><div class="presets" aria-label="常用长度"><button type="button" data-length="10">10 位</button><button type="button" data-length="16" aria-pressed="true">16 位</button><button type="button" data-length="24">24 位</button><button type="button" data-length="32">32 位</button></div></div>
+          <fieldset class="setting-block"><legend>使用字符</legend><div class="character-grid"><label class="character-option"><input type="checkbox" name="groups" value="uppercase" checked><span><strong>A–Z</strong><small>大写字母</small></span></label><label class="character-option"><input type="checkbox" name="groups" value="lowercase" checked><span><strong>a–z</strong><small>小写字母</small></span></label><label class="character-option"><input type="checkbox" name="groups" value="digits" checked><span><strong>0–9</strong><small>数字</small></span></label><label class="character-option"><input type="checkbox" name="groups" value="symbols"><span><strong>!@#</strong><small>符号</small></span></label></div><p class="field-note">每个密码都包含所选的每类字符。</p></fieldset>
+          <div class="setting-block readable-block"><label class="checkbox-line"><input id="readable" type="checkbox" checked><span>排除容易混淆的字符</span></label><p class="field-note indent-note"><code>0 O o 1 I l</code>，手动输入时更省心。</p></div>
+          <details class="advanced"><summary>高级选项 <span aria-hidden="true">+</span></summary><div class="advanced-body"><div class="label-row"><label for="count">生成数量</label><input id="count" name="count" type="number" min="1" max="100" step="1" value="1" inputmode="numeric"></div><p class="field-note">每次 1–100 个，可逐条或全部复制。</p><label class="field-label" for="excluded">额外排除字符</label><input id="excluded" name="excluded" type="text" maxlength="128" placeholder="例如：{}[]" autocomplete="off" spellcheck="false"><p class="field-note">记住偏好时，只保存这里的非敏感字符规则。</p></div></details>
+          <div class="preference-line"><label class="checkbox-line"><input id="remember" type="checkbox" checked><span>记住这些设置</span></label><button class="text-button" id="reset" type="button">恢复默认</button></div>
+          <p id="form-error" class="form-error" role="alert" hidden></p>
+          <button class="button primary generate-button" type="submit" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 7h-4l-3 5 3 5h4M4 7h4l8 10M4 17h4l8-10M18 5l2 2-2 2M18 15l2 2-2 2"/></svg><span id="generate-label">生成密码</span></button>
+        </form>
+        <section class="result-panel" aria-labelledby="result-heading">
+          <div class="panel-heading"><h2 id="result-heading">生成结果</h2><span id="result-meta">等待生成</span></div>
+          <div class="result-empty" id="result-empty"><div class="empty-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><rect x="11" y="21" width="26" height="20" rx="5"/><path d="M17 21v-8a7 7 0 0 1 14 0v8M24 29v5"/></svg></div><p>下一串密码，还没有诞生。</p><span>左边选好规则，点击「生成密码」。</span></div>
+          <ol id="results" class="password-results" aria-label="生成的密码" hidden></ol>
+          <div id="result-actions" class="result-actions" hidden><button class="button secondary" id="copy-all" type="button">复制全部</button><button class="text-button" id="clear" type="button">清空结果</button></div>
+          <p id="result-status" class="result-status" role="status" aria-live="polite"></p>
+          <div class="result-note"><span aria-hidden="true">↳</span><p>密码只留在当前页面，刷新后消失。<br>需要保留时，复制到你使用的密码管理器。</p></div>
+        </section>
+      </div>
+      <aside class="privacy-note"><span class="seed" aria-hidden="true"></span><p>使用浏览器的安全随机源生成。密码不上传、不记录；「记住设置」只保存生成偏好。</p></aside>
+      <noscript><p class="form-error">密码生成需要启用 JavaScript。你仍可以返回工具箱首页。</p></noscript>
+    </main>
+    <footer class="site-footer"><span>BesTools · 把常用的小事，做得顺手一点。</span><a href="https://github.com/BensonLaur/BesTools" target="_blank" rel="noopener noreferrer">本站源码 <span aria-hidden="true">↗</span></a></footer>
+  </div>
+</body>
+</html>

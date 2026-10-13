@@ -1,0 +1,18 @@
+{
+  "name": "bestools",
+  "version": "0.1.0",
+  "private": true,
+  "description": "BesTools · 个人顺手工具集：把常用的小事，做得顺手一点。",
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "dev": "node scripts/serve.mjs --port 4175",
+    "build": "node scripts/build.mjs",
+    "test:unit": "node --test tests/password.test.mjs",
+    "test:browser": "node tests/browser-smoke.mjs",
+    "test": "npm run test:unit && npm run test:browser",
+    "publish:plan": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/publish.ps1 -Plan",
+    "publish:github": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/publish.ps1"
+  },
+  "devDependencies": { "playwright": "1.62.1" }
+}
