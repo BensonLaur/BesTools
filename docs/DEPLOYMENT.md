@@ -1,10 +1,12 @@
-# GitHub Pages 发布准备
+# GitHub Pages 发布与维护
 
-## 当前边界
+## 发布状态与边界
 
-此次只准备本地文件、测试和发布步骤。发布脚本需要用户下班后手动执行，不自动定时执行。提交使用运行时的真实时间，不设置 `GIT_AUTHOR_DATE` 或 `GIT_COMMITTER_DATE`。
+首版已于 2026-10-13 下班后完成提交、公开仓库创建与 GitHub Pages 部署，BesSoftware 的工具入口也已发布。仓库描述、topics 和 Website 已设置，两个站点均通过线上验证。
 
-目标仓库：`BensonLaur/BesTools`，公开仓库；Website 预期为 `https://bensonlaur.github.io/BesTools/`。实际 Website 以 Pages API 返回地址为准。描述、topics 和两次提交的标题正文保存在 `github.json`。
+后续修改在本地准备并核对摘要，提交、推送与部署按用户当次授权执行，不自动定时执行。提交使用运行时的真实时间，不设置 `GIT_AUTHOR_DATE` 或 `GIT_COMMITTER_DATE`。
+
+公开仓库：[BensonLaur/BesTools](https://github.com/BensonLaur/BesTools)；Website 为 [工具箱](https://bensonlaur.github.io/BesTools/)，密码工具为 [随机密码生成器](https://bensonlaur.github.io/BesTools/tools/password/)，作品入口位于 [BesSoftware](https://bensonlaur.github.io/BesSoftware/)。实际 Website 以 Pages API 返回地址为准。描述、topics 和首版两次提交的标题正文保存在 `github.json`。
 
 ## 一键流程
 
@@ -17,7 +19,7 @@
 7. 检查首页与密码工具 HTTP 响应，把实际 Pages 地址填入 GitHub 仓库 About → Website。
 8. 工具上线后创建 BesSoftware 的独立提交、推送并等待其 Pages 工作流。
 
-过程中每个成功的本地提交写入不提交的 `.local/publish-state.json`，再次运行会复用这些提交。没有强制推送、回滚或删除远程仓库。网络或工作流失败时，已经创建的真实提交仍保留。
+过程中每个成功的本地提交写入不提交的 `.local/publish-state.json`，再次运行会复用这些提交。首次发布后，已有仓库与 Pages 配置会被复用。没有强制推送、回滚或删除远程仓库。网络或工作流失败时，已经创建的真实提交仍保留。
 
 ## 手动维护参考
 

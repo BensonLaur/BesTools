@@ -17,7 +17,7 @@
 
 ## Git 与发布
 
-- 当前准备阶段只创建和修改本地文件。用户下班后手动运行发布脚本，提交、远程创建、推送与部署才发生。
+- 首版已发布；后续准备阶段只创建和修改本地文件，提交、远程创建、推送与部署按用户当次授权执行。
 - 使用实际执行时刻提交，不设置或改写 Git author/committer 时间。
 - 提交前阅读本文件与近期 `git log`，使用 Conventional Commits 标题，正文 2–4 条要点。
 - 提交前运行 `powershell -NoProfile -File C:\Users\Benso\.codex\scripts\get-current-model.ps1`；独立终端使用本次来源会话的 `-ThreadId`。只采用唯一标准输出，失败时停止，不猜测模型。

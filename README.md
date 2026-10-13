@@ -4,7 +4,7 @@
 
 Benson 的个人工具箱，独立于 [BesSoftware](https://github.com/BensonLaur/BesSoftware) 维护。第一项工具是随机密码生成器：打开即用、免费、无广告、无需登录。更多工具按真实需要逐步加入。
 
-计划发布地址：[工具箱](https://bensonlaur.github.io/BesTools/) · [随机密码](https://bensonlaur.github.io/BesTools/tools/password/)。本地准备完成不代表这些地址已经上线。
+在线使用：[工具箱](https://bensonlaur.github.io/BesTools/) · [随机密码](https://bensonlaur.github.io/BesTools/tools/password/)。首版已于 2026-10-13 发布到 GitHub Pages，并加入 BesSoftware 作品入口。
 
 ## 本地使用
 
@@ -45,15 +45,15 @@ Windows 默认使用已安装的 Edge。其他环境执行 `npx playwright insta
 
 构建只复制 `index.html`、`tools/`、`assets/` 与 `.nojekyll` 到 `dist/`。文档、脚本、开发依赖与本地发布上下文均不进入网站。
 
-## 下班后发布
+## 维护与发布
 
-准备阶段没有创建提交、远程仓库或部署。只读检查：
+首版的公开仓库、描述、topics、Website 与两个站点的部署已完成。后续修改先完成本地验证并更新准备摘要，再按当次授权提交和发布。只读检查：
 
 ```powershell
 npm run publish:plan
 ```
 
-下班后在当前电脑双击 `publish.cmd`，或执行：
+需要发布已核对的改动时，在当前电脑双击 `publish.cmd`，或执行：
 
 ```powershell
 npm run publish:github
