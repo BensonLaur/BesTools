@@ -19,8 +19,8 @@ if (triggers.length) {
     </div>
     <div class="support-dialog-body">
       <div class="support-details">
-        <p id="support-description">如果这些小工具帮你省了点事，欢迎支持我继续打磨，也慢慢添上新的工具。</p>
-        <p class="support-voluntary">金额由你决定，所有工具免费使用、没有广告。使用、分享和反馈，也都是支持。</p>
+        <p id="support-description">BesTools 开源（<a class="support-source-link" href="https://github.com/BensonLaur/BesTools" target="_blank" rel="noopener noreferrer">查看 GitHub 源代码 <span aria-hidden="true">↗</span></a>）、免费，且没有任何广告。如果这些小工具帮你省了点事，欢迎自愿支持我继续打磨，也慢慢添上新的工具。</p>
+        <p class="support-voluntary">打赏金额由你决定。使用、分享和认真反馈，也都是珍贵的支持。</p>
         <div class="support-methods" aria-label="选择收款方式"><button type="button" data-support-method="wechat" aria-pressed="true">微信</button><button type="button" data-support-method="alipay" aria-pressed="false">支付宝</button></div>
         <p class="support-payee" aria-live="polite"></p>
         <div class="support-image-actions"><a class="button secondary" data-support-save>保存原图 <span aria-hidden="true">↓</span></a><a data-support-original target="_blank" rel="noopener noreferrer">打开原图 <span aria-hidden="true">↗</span></a></div>

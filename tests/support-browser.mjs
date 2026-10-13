@@ -25,6 +25,11 @@ export async function verifySupport(page, { output, prefix }) {
   await trigger.click();
   assert.equal(await dialog.isVisible(), true);
   assert.equal(await dialog.locator('#support-description').isVisible(), true);
+  assert.match(await dialog.locator('#support-description').innerText(), /开源（查看 GitHub 源代码 ↗）、免费/);
+  const sourceLink = dialog.locator('.support-source-link');
+  assert.equal(await sourceLink.getAttribute('href'), 'https://github.com/BensonLaur/BesTools');
+  assert.equal(await sourceLink.getAttribute('target'), '_blank');
+  assert.match(await sourceLink.getAttribute('rel'), /noopener/);
   assert.equal(await trigger.getAttribute('aria-expanded'), 'true');
   await dialog.locator(':scope[data-state="open"]').waitFor();
   await page.keyboard.press('Shift+Tab');

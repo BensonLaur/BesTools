@@ -6,11 +6,11 @@
   "homepage": "https://bensonlaur.github.io/BesTools/",
   "topics": ["bestools", "browser-tools", "password-generator", "privacy", "github-pages"],
   "toolsCommit": {
-    "title": "feat: add voluntary support to BesTools",
+    "title": "docs: clarify open source support and MIT license",
     "body": [
-      "为首页与工具页加入自愿支持入口，共用工具箱开合动画与微信、支付宝收款面板。",
-      "完整复用收款原图并提供保存操作；支持模块独立管理状态，保留密码、设置与剪贴板。",
-      "浏览器验证覆盖原图摘要、窄屏、焦点、快速开合与减少动态效果；发布预检兼容二进制图片。"
+      "在支持面板说明开源、免费与无广告，并紧随开源文案提供 GitHub 源代码入口。",
+      "为自编代码和文档采用 MIT，说明品牌、收款图片和第三方资源的独立归属。",
+      "浏览器验证覆盖源码链接、窄屏、焦点、原图与动画，并确认支持交互保留密码状态。"
     ]
   },
   "portfolioCommit": {
