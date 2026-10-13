@@ -62,8 +62,11 @@ function Assert-Prepared {
     try { $hash = [BitConverter]::ToString($algorithm.ComputeHash($bytes)).Replace('-', '') }
     finally { $algorithm.Dispose() }
     if ($hash -ne $file.sha256) { throw "Prepared file changed: $target. Review and prepare again." }
-    $text = [Text.Encoding]::UTF8.GetString($bytes)
-    if ($text -match '(?<!\r)\n|\r(?!\n)') { throw "Mixed or LF line endings: $target" }
+    # 原图仍核对摘要；只有文本执行行末检查，避免将 PNG 字节误当作换行。
+    if ($file.PSObject.Properties.Name -notcontains 'binary' -or -not $file.binary) {
+      $text = [Text.Encoding]::UTF8.GetString($bytes)
+      if ($text -match '(?<!\r)\n|\r(?!\n)') { throw "Mixed or LF line endings: $target" }
+    }
   }
   $changes = @()
   foreach ($arguments in @(

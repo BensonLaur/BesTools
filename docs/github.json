@@ -6,11 +6,11 @@
   "homepage": "https://bensonlaur.github.io/BesTools/",
   "topics": ["bestools", "browser-tools", "password-generator", "privacy", "github-pages"],
   "toolsCommit": {
-    "title": "feat: create BesTools with secure password generator",
+    "title": "feat: add voluntary support to BesTools",
     "body": [
-      "提供个人工具箱首页与可直接收藏的随机密码工具，支持批量生成、字符规则和复制。",
-      "使用安全随机源与拒绝采样，保证所选类别覆盖；仅保存偏好，密码限定在当前页面。",
-      "通过随机逻辑与浏览器验证，覆盖子路径、窄屏、存储限制及无安全随机源；准备 Pages 和手动发布流程。"
+      "为首页与工具页加入自愿支持入口，共用工具箱开合动画与微信、支付宝收款面板。",
+      "完整复用收款原图并提供保存操作；支持模块独立管理状态，保留密码、设置与剪贴板。",
+      "浏览器验证覆盖原图摘要、窄屏、焦点、快速开合与减少动态效果；发布预检兼容二进制图片。"
     ]
   },
   "portfolioCommit": {

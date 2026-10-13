@@ -5,6 +5,7 @@ import path from 'node:path';
 import { chromium } from 'playwright';
 import { createStaticServer, projectRoot } from '../scripts/serve.mjs';
 import { PREFERENCE_KEY } from '../tools/password/preferences.js';
+import { verifySupport } from './support-browser.mjs';
 import '../scripts/build.mjs';
 
 const output = path.join(projectRoot, 'test-results');
@@ -36,6 +37,7 @@ try {
   assert.match(await page.title(), /BesTools/);
   assert.equal(await page.locator('.tool-card').count(), 1);
   await page.screenshot({ path: path.join(output, 'home-desktop.png'), fullPage: true });
+  await verifySupport(page, { output, prefix: 'home' });
   await page.locator('.tool-card').click();
   assert.equal(page.url(), passwordUrl);
   await page.reload();
@@ -51,6 +53,7 @@ try {
   await page.getByRole('button', { name: '复制第 1 个密码', exact: true }).click();
   assert.equal(await page.evaluate(() => navigator.clipboard.readText()), values[0]);
   await page.screenshot({ path: path.join(output, 'password-desktop.png'), fullPage: true });
+  await verifySupport(page, { output, prefix: 'password' });
   await page.locator('[data-length="10"]').click();
   assert.deepEqual(await passwords(), []);
   assert.equal(await page.locator('#length').inputValue(), '10');
@@ -136,9 +139,9 @@ try {
   await noCrypto.close();
 
   assert.deepEqual(externalRequests, []); assert.deepEqual(badResponses, []); assert.deepEqual(errors, []);
-  const report = { basePath: '/BesTools/', secureGeneration: true, batch: true, clipboard: true, preferencesOnly: true, invalidRules: true, restrictedStorage: true, noCryptoFailsClosed: true, widths: [1120, 800, 660, 375, 320], externalRequests, errors, badResponses };
+  const report = { basePath: '/BesTools/', secureGeneration: true, batch: true, clipboard: true, preferencesOnly: true, invalidRules: true, restrictedStorage: true, noCryptoFailsClosed: true, voluntarySupport: true, originalPaymentImages: true, supportPreservesToolState: true, reversibleSupportAnimation: true, widths: [1120, 800, 660, 375, 320], externalRequests, errors, badResponses };
   await writeFile(path.join(output, 'report.json'), JSON.stringify(report, null, 2).replace(/\n/g, '\r\n') + '\r\n');
-  console.log('浏览器验证通过：生成与复制、规则边界、偏好隐私、子路径、窄屏和深浅色。');
+  console.log('浏览器验证通过：生成与复制、规则边界、偏好隐私、支持入口与原图、动画与焦点、子路径、窄屏和深浅色。');
 } finally {
   await browser?.close();
   server.closeAllConnections();

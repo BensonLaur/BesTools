@@ -6,11 +6,11 @@
 
 后续修改在本地准备并核对摘要，提交、推送与部署按用户当次授权执行，不自动定时执行。提交使用运行时的真实时间，不设置 `GIT_AUTHOR_DATE` 或 `GIT_COMMITTER_DATE`。
 
-公开仓库：[BensonLaur/BesTools](https://github.com/BensonLaur/BesTools)；Website 为 [工具箱](https://bensonlaur.github.io/BesTools/)，密码工具为 [随机密码生成器](https://bensonlaur.github.io/BesTools/tools/password/)，作品入口位于 [BesSoftware](https://bensonlaur.github.io/BesSoftware/)。实际 Website 以 Pages API 返回地址为准。描述、topics 和首版两次提交的标题正文保存在 `github.json`。
+公开仓库：[BensonLaur/BesTools](https://github.com/BensonLaur/BesTools)；Website 为 [工具箱](https://bensonlaur.github.io/BesTools/)，密码工具为 [随机密码生成器](https://bensonlaur.github.io/BesTools/tools/password/)，作品入口位于 [BesSoftware](https://bensonlaur.github.io/BesSoftware/)。实际 Website 以 Pages API 返回地址为准。描述、topics 和发布脚本所用的提交标题正文保存在 `github.json`。
 
 ## 一键流程
 
-1. 检查 `.local/publish-context.json` 中准备文件摘要、当前 HEAD、分支和 origin，拒绝混入之后的文件变动。
+1. 检查 `.local/publish-context.json` 中准备文件摘要、当前 HEAD、分支和 origin，拒绝混入之后的文件变动。文本检查纯 CRLF；标记为 `binary` 的收款原图只检查字节摘要。
 2. 重新运行 BesTools 与 BesSoftware 验证。
 3. 阅读各自 AGENTS.md 和近期日志，从来源会话重新读取实际模型；追加规范的 AI 署名并创建 BesTools 初始提交。
 4. `gh repo create BensonLaur/BesTools --public --description ... --homepage ... --source ... --remote origin`，不在创建时自动生成 README 或第二条历史。

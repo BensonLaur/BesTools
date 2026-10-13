@@ -143,6 +143,49 @@ code { font-family: Consolas, monospace; }
 .result-note { display: flex; gap: 9px; padding-top: 17px; margin-top: auto; border-top: 1px solid var(--rule); color: var(--muted); font-size: 11px; line-height: 1.8; }
 .result-note > span { font-size: 18px; }
 .privacy-note { display: flex; align-items: baseline; gap: 9px; color: var(--muted); font-size: 11px; padding: 22px 0 29px; }
+.support-invitation { display: flex; align-items: center; flex-wrap: wrap; gap: 22px; padding: 24px; margin: 0 0 30px; border: 1px solid var(--rule); border-radius: 16px; background: color-mix(in srgb, var(--tint) 45%, var(--page)); }
+.support-invitation-copy { flex: 1; min-width: 240px; }
+.support-kicker { color: var(--accent); font-size: 10px; letter-spacing: .8px; margin-bottom: 6px; }
+.support-invitation h2 { font-size: 17px; font-weight: 600; margin-bottom: 8px; }
+.support-invitation-copy > p:not(.support-kicker) { color: var(--muted); font-size: 12px; line-height: 1.9; max-width: 430px; }
+.support-invitation-copy > span { display: block; font-size: 11px; color: var(--muted); margin-top: 6px; }
+.support-trigger { flex: 0 0 auto; gap: 10px; background: var(--page); }
+.support-strip { display: flex; justify-content: space-between; align-items: center; gap: 18px; padding: 18px 0 24px; margin-bottom: 5px; border-top: 1px solid var(--rule); }
+.support-strip p { font-size: 12px; }
+.support-strip > div > span { color: var(--muted); font-size: 11px; }
+.support-strip-trigger { flex: 0 0 auto; display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; padding: 10px 13px; border: 1px solid var(--rule); border-radius: 8px; background: transparent; color: var(--accent); font-size: 12px; }
+.support-trigger:hover, .support-strip-trigger:hover { border-color: var(--accent); }
+.support-fallback { flex-basis: 100%; font-size: 12px; color: var(--muted); padding: 8px 0; }
+.support-fallback a { text-decoration: underline; }
+.support-art { --box-open: 0; position: relative; width: 90px; height: 82px; flex: 0 0 auto; color: var(--accent); }
+.support-box-body { position: absolute; top: 37px; left: 9px; width: 73px; height: 40px; border: 2px solid currentColor; border-radius: 4px 4px 12px 12px; background: var(--tint); box-shadow: 3px 5px 0 color-mix(in srgb, var(--accent) 7%, transparent); }
+.support-box-heart { display: block; margin-top: 8px; text-align: center; font-size: 23px; line-height: 1; }
+.support-box-lid { position: absolute; top: 24px; left: 9px; width: 73px; height: 17px; border: 2px solid currentColor; border-radius: 10px 10px 4px 4px; background: var(--tint); transform-origin: 8px 15px; transform: translateY(calc(var(--box-open) * -12px)) rotate(calc(var(--box-open) * -13deg)); }
+.support-box-handle { position: absolute; left: 24px; top: -13px; width: 22px; height: 13px; border: 2px solid currentColor; border-bottom: 0; border-radius: 6px 6px 0 0; }
+.support-box-latch { position: absolute; top: 33px; left: 39px; width: 13px; height: 12px; border: 2px solid currentColor; border-radius: 3px; background: var(--page); opacity: calc(1 - var(--box-open)); }
+.support-box-glow { position: absolute; inset: 5px 0 10px; border-radius: 50%; background: radial-gradient(ellipse, #e8cb78 0%, color-mix(in srgb, #e8cb78 40%, transparent) 35%, transparent 70%); opacity: calc(var(--box-open) * .85); transform: scale(calc(.8 + var(--box-open) * .35)); }
+html.support-modal-open { overflow: hidden; }
+.support-dialog { width: min(700px, calc(100% - 32px)); max-width: none; max-height: calc(100dvh - 48px); padding: 0; border: 1px solid var(--rule); border-radius: 20px; background: var(--panel); color: var(--ink); box-shadow: 0 20px 90px #0003; overflow: auto; overscroll-behavior: contain; scrollbar-width: thin; }
+.support-dialog::backdrop { background: #14241999; }
+.support-dialog-head { display: flex; gap: 16px; align-items: center; padding: 14px 22px 12px; position: sticky; top: 0; z-index: 1; background: var(--panel); border-bottom: 1px solid var(--rule); }
+.support-dialog-head .support-art { width: 82px; transform: scale(.85); margin-left: -6px; margin-right: -6px; }
+.support-dialog-head h2 { font-size: 21px; font-weight: 600; letter-spacing: -.5px; }
+.support-close { margin-left: auto; align-self: flex-start; min-width: 44px; min-height: 44px; border: 1px solid var(--rule); background: var(--page); border-radius: 50%; font-size: 24px; line-height: 1; }
+.support-close:hover { border-color: var(--accent); }
+.support-dialog-body { display: grid; grid-template-columns: minmax(0, 1fr) 240px; align-items: start; gap: 26px; padding: 24px; }
+.support-details > p:first-child { font-size: 14px; line-height: 1.9; }
+.support-voluntary { color: var(--muted); font-size: 12px; line-height: 1.9; margin-top: 10px; }
+.support-methods { display: flex; gap: 8px; margin: 22px 0 12px; }
+.support-methods button { flex: 1; min-height: 44px; border: 1px solid var(--rule); border-radius: 8px; background: var(--page); font-size: 13px; }
+.support-methods button[aria-pressed="true"] { color: var(--accent); border-color: var(--accent); background: var(--tint); font-weight: 600; }
+.support-payee { color: var(--accent); font-size: 12px; }
+.support-image-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; margin: 14px 0 10px; }
+.support-image-actions .button { font-size: 12px; gap: 10px; }
+.support-image-actions > a:not(.button) { display: inline-flex; align-items: center; gap: 5px; min-height: 44px; color: var(--muted); font-size: 12px; }
+.support-instruction { color: var(--muted); font-size: 12px; line-height: 1.9; }
+.support-payment { min-width: 0; padding: 8px; border: 1px solid var(--rule); border-radius: 12px; background: #fff; }
+/* 收款主体、平台标识与留白都来自原图，始终等比完整展示。 */
+.support-payment img { display: block; width: 100%; height: auto; }
 @media (max-width: 800px) {
   .page-shell { padding: 0 24px; }
   .home-hero { gap: 20px; }
@@ -165,6 +208,23 @@ code { font-family: Consolas, monospace; }
   .result-empty { padding: 40px 0 45px; }
   .tool-heading h1 { font-size: 28px; }
   .privacy-note { padding: 20px 0 24px; }
+  .support-invitation { align-items: flex-start; gap: 14px; padding: 20px; }
+  .support-invitation .support-art { width: 76px; transform: scale(.85); transform-origin: left top; margin-right: -10px; }
+  .support-invitation-copy { min-width: 0; flex-basis: calc(100% - 90px); }
+  .support-invitation h2 { font-size: 16px; }
+  .support-trigger { width: 100%; }
+  .support-strip { align-items: flex-start; flex-direction: column; gap: 10px; }
+  .support-strip-trigger { padding-left: 12px; }
+  .support-dialog { width: 100%; max-height: 92dvh; margin: auto 0 0; border-radius: 20px 20px 0 0; border-bottom: 0; }
+  .support-dialog-head { gap: 10px; padding: 8px 16px; }
+  .support-dialog-head .support-art { width: 62px; height: 65px; transform: scale(.7); transform-origin: left center; margin-right: -12px; }
+  .support-dialog-head h2 { font-size: 18px; letter-spacing: -.3px; }
+  .support-dialog-head .support-kicker { font-size: 10px; }
+  .support-close { min-width: 40px; min-height: 40px; font-size: 22px; }
+  .support-dialog-body { grid-template-columns: 1fr; gap: 20px; padding: 18px 22px calc(24px + env(safe-area-inset-bottom)); }
+  .support-methods { margin-top: 16px; }
+  .support-payment { width: min(100%, 260px); justify-self: center; }
+  .support-image-actions .button { flex: 1; }
 }
 @media (max-width: 380px) {
   .page-shell { padding: 0 16px; }
