@@ -12,14 +12,14 @@
 
 桌面居中弹窗，窄屏底部卡片。关闭按钮保持可见，支持 Esc、遮罩关闭、焦点循环与返回入口；仅当按下和释放都在遮罩上才关闭，避免滚动或拖拽图片时误触。保存原图按钮位于图片之前，可另开原图；同一部手机可保存后在支付应用中从相册识别。
 
-## 收款原图
+## 收款图片
 
-按作者本次同意的方案，`assets/support/wechat.png` 和 `assets/support/alipay.png` 从 BesSoftware 同名资源逐字节复制，用于 BesTools 的自愿支持入口。没有裁剪、重绘或替换二维码、平台标识、留白与收款主体；原图完整等比展示。
+`assets/support/wechat.png` 和 `assets/support/alipay.png` 与 BesSoftware 同名资源使用同一对经作者实测确认的减色 PNG。图片完整等比展示，保留原始尺寸、二维码内容、平台标识、留白与收款主体。
 
 | 图片 | 尺寸 | 可见收款主体 | SHA-256 |
 | --- | --- | --- | --- |
-| wechat.png | 1266 × 1749 | Benson(**城) | A89AD9F33ECC5B9BC6A6BF5587FA16CD04809D3BFBCAAC58A0731FACEAE41449 |
-| alipay.png | 1080 × 1680 | Bes软件 | 5F5722D5A30ECBD5D51684A2051EB40961070C8954A2F3B3EEF403F526F367D4 |
+| wechat.png | 1266 × 1749 | Benson(**城) | 99B2B2CA2BA9C7FA7C8E15F45781DD9F578329249A016C99E111B7635103016E |
+| alipay.png | 1080 × 1680 | Bes软件 | 28D6B3E7449860DB5E28E8D4E1B89B0C5B55FC5D96478765A0E3028570023549 |
 
 收款图片归作者，不因代码公开而授予第三方用于其收款页面的权利。付款前在支付应用中确认实际收款人，金额由使用者决定。
 

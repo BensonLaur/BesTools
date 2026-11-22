@@ -5,8 +5,8 @@ import path from 'node:path';
 
 // 固定原图摘要，使构建或后续改动中的裁切、替换能被验证发现。
 const originalHashes = {
-  wechat: 'a89ad9f33ecc5b9bc6a6bf5587fa16cd04809d3bfbcaac58a0731faceae41449',
-  alipay: '5f5722d5a30ecbd5d51684a2051eb40961070c8954a2f3b3eef403f526f367d4'
+  wechat: '99b2b2ca2ba9c7fa7c8e15f45781dd9f578329249a016c99e111b7635103016e',
+  alipay: '28d6b3e7449860db5e28e8d4e1b89b0c5b55fc5d96478765a0e3028570023549'
 };
 
 export async function verifySupport(page, { output, prefix }) {

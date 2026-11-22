@@ -10,7 +10,7 @@ Bes 名称、标识和作者个人品牌内容属于作者。MIT 代码许可不
 
 ## 自愿支持收款图片
 
-`assets/support/wechat.png` 和 `assets/support/alipay.png` 按作者要求，从 BesSoftware 同名原图逐字节复制，用于 BesTools 自愿支持入口。图片归作者，不因代码采用 MIT 而授予第三方用于其收款页面的权利。
+`assets/support/wechat.png` 和 `assets/support/alipay.png` 与 BesSoftware 同名资源使用同一对经作者实测确认的减色 PNG，用于 BesTools 自愿支持入口。图片归作者，不因代码采用 MIT 而授予第三方用于其收款页面的权利。
 
 图片完整等比展示，没有裁剪、重绘二维码或更换平台标识、留白与收款主体。可见收款主体为微信 `Benson(**城)`、支付宝 `Bes软件`；来源、尺寸与 SHA-256 摘要见 [支持入口说明](SUPPORT.md)。
 
